@@ -50,7 +50,7 @@ while True:
     print("-\t" * 10)
     text = input("text:\t")
     shift = input("shift:\t")
-    if shift == "options":
+    if shift in ["options", "op", "o", "more"]:
         for i in range(26):
             a.append(ceaser_shift(text, i, ret) + f"\t{i} or {i + 26}")
         for i in a:
@@ -59,6 +59,42 @@ while True:
     try:
         shift = int(shift)
     except:
-        print("      invalid")
+        print("\tinvalid")
         continue
-    print("\t" + ceaser_shift(text, shift, ret))
+    try:
+        print("\t" + ceaser_shift(text, shift, ret))
+    except:
+        try:
+            print("\t" + ceaser_shift(text, shift - 26, ret))
+        except:
+            try:
+                print("\t" + ceaser_shift(text, shift - 26 * 2, ret))
+            except:
+                try:
+                    print("\t" + ceaser_shift(text, shift - 26 * 3, ret))
+                except:
+                    try:
+                        print("\t" + ceaser_shift(text, shift - 26 * 4, ret))
+                    except:
+                        try:
+                            print("\t" + ceaser_shift(text, shift - 26 * 5, ret))
+                        except:
+                            try:
+                                print("\t" + ceaser_shift(text, shift - 26 * 6, ret))
+                            except:
+                                try:
+                                    print("\t" + ceaser_shift(text, shift - 26 * 7, ret))
+                                except:
+                                    try:
+                                        print("\t" + ceaser_shift(text, shift - 26 * 8, ret))
+                                    except:
+                                        try:
+                                            print("\t" + ceaser_shift(text, shift - 26 * 9, ret))
+                                        except:
+                                            try:
+                                                print("\t" + ceaser_shift(text, shift - 26 * 10, ret))
+                                            except:
+                                                try:
+                                                    print("\t" + ceaser_shift(text, shift - 26 * 11, ret))
+                                                except:
+                                                    print("\t" + "invalid")
